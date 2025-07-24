@@ -4,7 +4,7 @@
 
 ---
 
-## Cấu trúc dự án
+## 🗂️ Cấu trúc dự án
 
 ```
 lib/
@@ -17,12 +17,14 @@ lib/
 ├── service_locator.dart # Cấu hình GetIt để quản lý phụ thuộc (Dependency Injection)
 ```
 
-## UI
+## 🎨 UI
 
-![Giao diện](images/Screenshot_1.png)
-![Giao diện](images/Screenshot_2.png)
-![Giao diện](images/Screenshot_3.png)
-![Giao diện](images/Screenshot_4.png)
+<p float="left">
+  <img src="images/Screenshot_1.png" width="200"/>
+  <img src="images/Screenshot_2.png" width="200"/>
+  <img src="images/Screenshot_3.png" width="200"/>
+  <img src="images/Screenshot_4.png" width="200"/>
+</p>
 
 ## 🚀 Công nghệ & các thư viện chính
 
@@ -82,7 +84,7 @@ flutter run
 ```
 Lưu ý: Bạn có thể cần chạy flutter doctor để kiểm tra các vấn đề về môi trường (Xcode, Android SDK, ...)
 
-## Mock API
+## 🧪 Mock API
 Ứng dụng sử dụng dữ liệu giả lập (mock data) để mô phỏng tương tác với API backend.
 
 ```
