@@ -86,7 +86,6 @@ Lưu ý: Bạn có thể cần chạy flutter doctor để kiểm tra các vấn
 
 ## 🧪 Mock API
 Ứng dụng sử dụng dữ liệu giả lập (mock data) để mô phỏng tương tác với API backend.
-
 ```
 lib/
 └── config/
@@ -95,6 +94,21 @@ lib/
         └── mock_data.dart
         └── mock_product_data.dart
 ```
+
+📡 Giả lập API chuẩn RESTful
+
+Ứng dụng mô phỏng các endpoint của RESTful API như sau:
+
+| Method | Endpoint                | Mô tả                                                                                   |
+| ------ | ----------------------- | --------------------------------------------------------------------------------------- |
+| GET    | `/products`             | Trả về danh sách sản phẩm, hỗ trợ tìm kiếm theo `?q=keyword` và lọc theo `?categoryId=` |
+| GET    | `/products/{id}`        | Trả về chi tiết sản phẩm theo ID                                                        |
+| POST   | `/products`             | Tạo mới sản phẩm (body: JSON)                                                           |
+| PUT    | `/products/{id}`        | Cập nhật thông tin sản phẩm                                                             |
+| DELETE | `/products/{id}`        | Xóa sản phẩm                                                                            |
+| POST   | `/products/{id}/images` | Upload hình ảnh cho sản phẩm (multipart/form-data)                                      |
+| GET    | `/categories`           | Trả về danh sách danh mục sản phẩm                                                      |
+
 
 📦 Dữ liệu có sẵn bao gồm:
 - MockCategoryData: Danh sách danh mục sản phẩm mẫu
