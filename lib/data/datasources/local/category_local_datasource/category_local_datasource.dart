@@ -12,7 +12,7 @@ class CategoryLocalDataSource {
     try {
       await databaseService.cacheCategories(categories);
     } catch (e) {
-      throw Exception('Failed to cache categories: $e');
+      throw Exception('Không lưu được danh mục vào bộ nhớ đệm: $e');
     }
   }
 
@@ -20,7 +20,7 @@ class CategoryLocalDataSource {
     try {
       return await databaseService.getCachedCategories();
     } catch (e) {
-      throw Exception('Failed to fetch cached categories: $e');
+      throw Exception('Không thể tải các danh mục được lưu trong bộ nhớ đệm: $e');
     }
   }
 }

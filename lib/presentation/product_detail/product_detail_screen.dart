@@ -39,94 +39,6 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
     _productDetailBloc.add(GetProductById(productID: widget.productID));
   }
 
-  // @override
-  // Widget build(BuildContext context) {
-  //   return BlocConsumer<ProductDetailBloc, ProductDetailState>(
-  //     listener: (context, state) {
-  //       if (state is ProductDetailLoading) {
-  //         LoadingOverlayController.instance.show(context);
-  //       } else if (state is ProductDetailError) {
-  //         CommonDialog.instance.show(
-  //           context: context,
-  //           content: state.message,
-  //           contentYes: 'Xác nhận',
-  //           onYes: () {},
-  //         );
-  //       }
-  //       LoadingOverlayController.instance.hide();
-  //     },
-  //     builder: (context, state) {
-  //       return Scaffold(
-  //         appBar: const CommonAppBar(
-  //           title: Text(
-  //             'Chi tiết sản phẩm',
-  //             style: TextStyle(
-  //               fontSize: 18,
-  //             ),
-  //           ),
-  //         ),
-  //         body: BlocBuilder<ProductDetailBloc, ProductDetailState>(
-  //           builder: (context, state) {
-  //             if (state is ProductDetailError) {
-  //               return Center(
-  //                 child: Text(state.message),
-  //               );
-  //             }
-  //             if (state is ProductDetailLoaded) {
-  //               final product = state.product;
-  //               return SingleChildScrollView(
-  //                 child: Column(
-  //                   children: [
-  //                     if (product.images.isNotEmpty)
-  //                       CarouselSlider(
-  //                         options:
-  //                             CarouselOptions(height: 200.0, autoPlay: true),
-  //                         items: product.images.map((url) {
-  //                           return ImageWidget(
-  //                             url: url,
-  //                           );
-  //                         }).toList(),
-  //                       )
-  //                     else
-  //                       const SizedBox(
-  //                         height: 200.0,
-  //                         child: Icon(Icons.broken_image, size: 100),
-  //                       ),
-  //                     const SizedBox(
-  //                       height: 16,
-  //                     ),
-  //                     ListTile(
-  //                       title: Text(
-  //                         product.name,
-  //                         style: const TextStyle(fontWeight: FontWeight.bold),
-  //                       ),
-  //                       subtitle: Column(
-  //                         crossAxisAlignment: CrossAxisAlignment.start,
-  //                         children: [
-  //                           Text(product.description),
-  //                           const SizedBox(
-  //                             height: 8,
-  //                           ),
-  //                           Text('Giá: ${product.price.toVND()}'),
-  //                           const SizedBox(
-  //                             height: 8,
-  //                           ),
-  //                           Text('Tồn Kho: ${product.stockQuantity}'),
-  //                         ],
-  //                       ),
-  //                     ),
-  //                   ],
-  //                 ),
-  //               );
-  //             }
-  //             return const SizedBox.shrink();
-  //           },
-  //         ),
-  //         floatingActionButton: const _FloatingActionButton(),
-  //       );
-  //     },
-  //   );
-  // }
   @override
   Widget build(BuildContext context) {
     return MultiBlocListener(
@@ -280,7 +192,6 @@ class _FloatingActionButton extends StatelessWidget {
                   onYes: () {
                     productDetailActionBloc.add(DeleteProduct(product.id));
                     productListBloc.add(const FetchProducts());
-                    // Navigator.of(context).pop();
                   },
                   contentNo: 'Hủy',
                 );

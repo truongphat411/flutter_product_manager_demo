@@ -12,7 +12,7 @@ class ProductLocalDataSource {
     try {
       await databaseService.cacheProduct(products);
     } catch (e) {
-      throw Exception('Failed to cache products: $e');
+      throw Exception('Không lưu được sản phẩm vào bộ nhớ đệm: $e');
     }
   }
 
@@ -24,7 +24,7 @@ class ProductLocalDataSource {
       return await databaseService.getCachedProduct(
           keyword: keyword, categoryId: categoryId);
     } catch (e) {
-      throw Exception('Failed to fetch cached products: $e');
+      throw Exception('Không thể tải các sản phẩm được lưu trong bộ nhớ đệm: $e');
     }
   }
 
@@ -32,7 +32,7 @@ class ProductLocalDataSource {
     try {
       return await databaseService.getProductByID(id);
     } catch (e) {
-      throw Exception('Failed to fetch product by ID: $e');
+      throw Exception('Không tìm được sản phẩm theo ID: $e');
     }
   }
 }

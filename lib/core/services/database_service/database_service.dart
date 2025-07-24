@@ -15,7 +15,7 @@ class DatabaseService {
       _database = await _initDatabase();
       return _database!;
     } catch (e) {
-      throw Exception('Failed to initialize database: $e');
+      throw Exception('Không khởi tạo được cơ sở dữ liệu: $e');
     }
   }
 
@@ -128,7 +128,7 @@ class DatabaseService {
               ))
           .toList();
     } catch (e) {
-      throw Exception('Failed to fetch products: $e');
+      throw Exception('Không thể tải sản phẩm: $e');
     }
   }
 
@@ -141,7 +141,7 @@ class DatabaseService {
         whereArgs: [id],
       );
       if (maps.isEmpty) {
-        throw Exception('Product with ID $id not found');
+        throw Exception('Không tìm thấy sản phẩm có ID');
       }
       final map = maps.first;
       return ProductModel(
@@ -154,7 +154,7 @@ class DatabaseService {
         images: List<String>.from(jsonDecode(map['images'] as String)),
       );
     } catch (e) {
-      throw Exception('Failed to fetch product by ID: $e');
+      throw Exception('Không tìm được sản phẩm theo ID: $e');
     }
   }
 
@@ -185,7 +185,7 @@ class DatabaseService {
               ))
           .toList();
     } catch (e) {
-      throw Exception('Failed to fetch categories: $e');
+      throw Exception('Không tìm được danh mục: $e');
     }
   }
 }

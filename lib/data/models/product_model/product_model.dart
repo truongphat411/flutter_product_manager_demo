@@ -60,24 +60,4 @@ class ProductModel {
       images: images ?? this.images,
     );
   }
-
-  factory ProductModel.fromMap(Map<String, dynamic> map) => ProductModel(
-        id: map['id'],
-        name: map['name'],
-        description: map['description'],
-        price: map['price'],
-        stockQuantity: map['stock_quantity'],
-        categoryId: map['category_id'],
-        images: (map['images'] as String).split(','),
-      );
-
-  Map<String, dynamic> toMap() => {
-        'id': id,
-        'name': name,
-        'description': description,
-        'price': price,
-        'stock_quantity': stockQuantity,
-        'category_id': categoryId,
-        'images': images.join(','),
-      };
 }
