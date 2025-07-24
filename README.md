@@ -1,4 +1,4 @@
-# Flutter Product Manager Demo
+# Quản lý sản phẩm
 
 Ứng dụng quản lý sản phẩm được xây dựng bằng Flutter. Ứng dụng này cho phép người dùng xem, tìm kiếm, thêm, cập nhật và xóa thông tin sản phẩm.
 
